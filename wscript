@@ -659,13 +659,13 @@ def add_scratch_programs(bld):
 # Appended by Shimizu Takeshi
 def add_pmtud_programs(bld):
     all_modules = [mod[len("ns3-"):] for mod in bld.env['NS3_ENABLED_MODULES']]
-    for dir in os.listdir('pmtud/senario'):
-        if os.path.isdir(os.path.join('pmtud/senario', dir)):
-            bld.recurse(os.path.join('pmtud/senario', dir))
+    for dir in os.listdir('pmtud'):
+        if os.path.isdir(os.path.join('pmtud', dir)):
+            bld.recurse(os.path.join('pmtud', dir))
         elif dir.endswith(".cc"):
             name = dir[:-len(".cc")]
             obj = bld.create_ns3_program(name, all_modules)
-            obj.path = obj.path.find_dir('pmtud/senario')
+            obj.path = obj.path.find_dir('pmtud')
             obj.source = dir
             obj.target = name
             obj.name = obj.target

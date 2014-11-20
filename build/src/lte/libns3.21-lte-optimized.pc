@@ -1,0 +1,10 @@
+prefix=/usr/local
+libdir=/usr/local/lib
+includedir=/usr/local/include/ns3.21
+
+Name: libns3-lte
+Description: ns-3 module ns3-lte
+Version: 3.21
+Libs: -L${libdir} -Wl,-Bdynamic -lns3.21-lte-optimized
+Cflags: -I${includedir}
+Requires: libns3.21-core-optimized libns3.21-network-optimized libns3.21-spectrum-optimized libns3.21-stats-optimized libns3.21-buildings-optimized libns3.21-virtual-net-device-optimized libns3.21-point-to-point-optimized libns3.21-applications-optimized libns3.21-internet-optimized libns3.21-csma-optimized libns3.21-fd-net-device-optimized

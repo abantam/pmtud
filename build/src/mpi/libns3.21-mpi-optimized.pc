@@ -1,0 +1,10 @@
+prefix=/usr/local
+libdir=/usr/local/lib
+includedir=/usr/local/include/ns3.21
+
+Name: libns3-mpi
+Description: ns-3 module ns3-mpi
+Version: 3.21
+Libs: -L${libdir} -Wl,-Bdynamic -lns3.21-mpi-optimized -L/usr/lib/x86_64-linux-gnu -Wl,-Bsymbolic-functions -Wl,-z,relro -lmpichcxx -lmpich -lopa -lmpl -lrt -lcr -lpthread
+Cflags: -I${includedir} -fstack-protector -fstack-protector -DNS3_MPICH -DNS3_MPI -I/usr/include/mpich
+Requires: libns3.21-core-optimized libns3.21-network-optimized

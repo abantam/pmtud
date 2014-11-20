@@ -11053,6 +11053,607 @@ PyTypeObject PyNs3Probe_Type = {
 
 
 PyObject *
+PyNs3SqliteDataOutput__PythonHelper::_wrap_NotifyConstructionCompleted(PyNs3SqliteDataOutput *self)
+{
+    PyObject *py_retval;
+    PyNs3SqliteDataOutput__PythonHelper *helper = dynamic_cast< PyNs3SqliteDataOutput__PythonHelper* >(self->obj);
+    
+    if (helper == NULL) {
+        PyErr_SetString(PyExc_TypeError, "Method NotifyConstructionCompleted of class ObjectBase is protected and can only be called by a subclass");
+        return NULL;
+    }
+    helper->NotifyConstructionCompleted__parent_caller();
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+
+PyObject *
+PyNs3SqliteDataOutput__PythonHelper::_wrap_DoInitialize(PyNs3SqliteDataOutput *self)
+{
+    PyObject *py_retval;
+    PyNs3SqliteDataOutput__PythonHelper *helper = dynamic_cast< PyNs3SqliteDataOutput__PythonHelper* >(self->obj);
+    
+    if (helper == NULL) {
+        PyErr_SetString(PyExc_TypeError, "Method DoInitialize of class Object is protected and can only be called by a subclass");
+        return NULL;
+    }
+    helper->DoInitialize__parent_caller();
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+
+PyObject *
+PyNs3SqliteDataOutput__PythonHelper::_wrap_NotifyNewAggregate(PyNs3SqliteDataOutput *self)
+{
+    PyObject *py_retval;
+    PyNs3SqliteDataOutput__PythonHelper *helper = dynamic_cast< PyNs3SqliteDataOutput__PythonHelper* >(self->obj);
+    
+    if (helper == NULL) {
+        PyErr_SetString(PyExc_TypeError, "Method NotifyNewAggregate of class Object is protected and can only be called by a subclass");
+        return NULL;
+    }
+    helper->NotifyNewAggregate__parent_caller();
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+
+PyObject *
+PyNs3SqliteDataOutput__PythonHelper::_wrap_DoDispose(PyNs3SqliteDataOutput *self)
+{
+    PyObject *py_retval;
+    PyNs3SqliteDataOutput__PythonHelper *helper = dynamic_cast< PyNs3SqliteDataOutput__PythonHelper* >(self->obj);
+    
+    if (helper == NULL) {
+        PyErr_SetString(PyExc_TypeError, "Method DoDispose of class SqliteDataOutput is protected and can only be called by a subclass");
+        return NULL;
+    }
+    helper->DoDispose__parent_caller();
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+
+void
+PyNs3SqliteDataOutput__PythonHelper::Output(ns3::DataCollector & dc)
+{
+    PyGILState_STATE __py_gil_state;
+    PyObject *py_method;
+    ns3::SqliteDataOutput *self_obj_before;
+    PyObject *py_retval;
+    PyNs3DataCollector *py_DataCollector;
+    
+    __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+    py_method = PyObject_GetAttrString(m_pyself, (char *) "Output"); PyErr_Clear();
+    if (py_method == NULL || Py_TYPE(py_method) == &PyCFunction_Type) {
+        ns3::SqliteDataOutput::Output(dc);
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    self_obj_before = reinterpret_cast< PyNs3SqliteDataOutput* >(m_pyself)->obj;
+    reinterpret_cast< PyNs3SqliteDataOutput* >(m_pyself)->obj = (ns3::SqliteDataOutput*) this;
+    py_DataCollector = PyObject_GC_New(PyNs3DataCollector, &PyNs3DataCollector_Type);
+    py_DataCollector->inst_dict = NULL;
+    
+    py_DataCollector->inst_dict = NULL;
+    py_DataCollector->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+    py_DataCollector->obj = new ns3::DataCollector(dc);
+    py_DataCollector->obj->Ref ();
+    PyNs3ObjectBase_wrapper_registry[(void *) py_DataCollector->obj] = (PyObject *) py_DataCollector;
+    ns3::CompleteConstruct(py_DataCollector->obj);
+    py_retval = PyObject_CallMethod(m_pyself, (char *) "Output", (char *) "N", py_DataCollector);
+    if (py_retval == NULL) {
+        PyErr_Print();
+        reinterpret_cast< PyNs3SqliteDataOutput* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    if (py_retval != Py_None) {
+        PyErr_SetString(PyExc_TypeError, "function/method should return None");
+        Py_DECREF(py_retval);
+        reinterpret_cast< PyNs3SqliteDataOutput* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    Py_DECREF(py_retval);
+    reinterpret_cast< PyNs3SqliteDataOutput* >(m_pyself)->obj = self_obj_before;
+    Py_XDECREF(py_method);
+    if (PyEval_ThreadsInitialized())
+        PyGILState_Release(__py_gil_state);
+    return;
+}
+
+void
+PyNs3SqliteDataOutput__PythonHelper::DoDispose()
+{
+    PyGILState_STATE __py_gil_state;
+    PyObject *py_method;
+    ns3::SqliteDataOutput *self_obj_before;
+    PyObject *py_retval;
+    
+    __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+    py_method = PyObject_GetAttrString(m_pyself, (char *) "DoDispose"); PyErr_Clear();
+    if (py_method == NULL || Py_TYPE(py_method) == &PyCFunction_Type) {
+        ns3::SqliteDataOutput::DoDispose();
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    self_obj_before = reinterpret_cast< PyNs3SqliteDataOutput* >(m_pyself)->obj;
+    reinterpret_cast< PyNs3SqliteDataOutput* >(m_pyself)->obj = (ns3::SqliteDataOutput*) this;
+    py_retval = PyObject_CallMethod(m_pyself, (char *) "DoDispose", (char *) "");
+    if (py_retval == NULL) {
+        PyErr_Print();
+        reinterpret_cast< PyNs3SqliteDataOutput* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    if (py_retval != Py_None) {
+        PyErr_SetString(PyExc_TypeError, "function/method should return None");
+        Py_DECREF(py_retval);
+        reinterpret_cast< PyNs3SqliteDataOutput* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    Py_DECREF(py_retval);
+    reinterpret_cast< PyNs3SqliteDataOutput* >(m_pyself)->obj = self_obj_before;
+    Py_XDECREF(py_method);
+    if (PyEval_ThreadsInitialized())
+        PyGILState_Release(__py_gil_state);
+    return;
+}
+
+ns3::TypeId
+PyNs3SqliteDataOutput__PythonHelper::GetInstanceTypeId() const
+{
+    PyGILState_STATE __py_gil_state;
+    PyObject *py_method;
+    ns3::Object *self_obj_before;
+    PyObject *py_retval;
+    PyNs3TypeId *tmp_TypeId;
+    
+    __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+    py_method = PyObject_GetAttrString(m_pyself, (char *) "GetInstanceTypeId"); PyErr_Clear();
+    if (py_method == NULL || Py_TYPE(py_method) == &PyCFunction_Type) {
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return ns3::Object::GetInstanceTypeId();
+    }
+    self_obj_before = reinterpret_cast< PyNs3Object* >(m_pyself)->obj;
+    reinterpret_cast< PyNs3Object* >(m_pyself)->obj = const_cast< ns3::Object* >((const ns3::Object*) this);
+    py_retval = PyObject_CallMethod(m_pyself, (char *) "GetInstanceTypeId", (char *) "");
+    if (py_retval == NULL) {
+        PyErr_Print();
+        reinterpret_cast< PyNs3Object* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return ns3::Object::GetInstanceTypeId();
+    }
+    py_retval = Py_BuildValue((char*) "(N)", py_retval);
+    if (!PyArg_ParseTuple(py_retval, (char *) "O!", &PyNs3TypeId_Type, &tmp_TypeId)) {
+        PyErr_Print();
+        Py_DECREF(py_retval);
+        reinterpret_cast< PyNs3Object* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return ns3::Object::GetInstanceTypeId();
+    }
+    ns3::TypeId retval = *tmp_TypeId->obj;
+    Py_DECREF(py_retval);
+    reinterpret_cast< PyNs3Object* >(m_pyself)->obj = self_obj_before;
+    Py_XDECREF(py_method);
+    if (PyEval_ThreadsInitialized())
+        PyGILState_Release(__py_gil_state);
+    return retval;
+}
+
+void
+PyNs3SqliteDataOutput__PythonHelper::DoInitialize()
+{
+    PyGILState_STATE __py_gil_state;
+    PyObject *py_method;
+    ns3::Object *self_obj_before;
+    PyObject *py_retval;
+    
+    __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+    py_method = PyObject_GetAttrString(m_pyself, (char *) "DoInitialize"); PyErr_Clear();
+    if (py_method == NULL || Py_TYPE(py_method) == &PyCFunction_Type) {
+        ns3::Object::DoInitialize();
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    self_obj_before = reinterpret_cast< PyNs3Object* >(m_pyself)->obj;
+    reinterpret_cast< PyNs3Object* >(m_pyself)->obj = (ns3::Object*) this;
+    py_retval = PyObject_CallMethod(m_pyself, (char *) "DoInitialize", (char *) "");
+    if (py_retval == NULL) {
+        PyErr_Print();
+        reinterpret_cast< PyNs3Object* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    if (py_retval != Py_None) {
+        PyErr_SetString(PyExc_TypeError, "function/method should return None");
+        Py_DECREF(py_retval);
+        reinterpret_cast< PyNs3Object* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    Py_DECREF(py_retval);
+    reinterpret_cast< PyNs3Object* >(m_pyself)->obj = self_obj_before;
+    Py_XDECREF(py_method);
+    if (PyEval_ThreadsInitialized())
+        PyGILState_Release(__py_gil_state);
+    return;
+}
+
+void
+PyNs3SqliteDataOutput__PythonHelper::NotifyNewAggregate()
+{
+    PyGILState_STATE __py_gil_state;
+    PyObject *py_method;
+    ns3::Object *self_obj_before;
+    PyObject *py_retval;
+    
+    __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+    py_method = PyObject_GetAttrString(m_pyself, (char *) "NotifyNewAggregate"); PyErr_Clear();
+    if (py_method == NULL || Py_TYPE(py_method) == &PyCFunction_Type) {
+        ns3::Object::NotifyNewAggregate();
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    self_obj_before = reinterpret_cast< PyNs3Object* >(m_pyself)->obj;
+    reinterpret_cast< PyNs3Object* >(m_pyself)->obj = (ns3::Object*) this;
+    py_retval = PyObject_CallMethod(m_pyself, (char *) "NotifyNewAggregate", (char *) "");
+    if (py_retval == NULL) {
+        PyErr_Print();
+        reinterpret_cast< PyNs3Object* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    if (py_retval != Py_None) {
+        PyErr_SetString(PyExc_TypeError, "function/method should return None");
+        Py_DECREF(py_retval);
+        reinterpret_cast< PyNs3Object* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    Py_DECREF(py_retval);
+    reinterpret_cast< PyNs3Object* >(m_pyself)->obj = self_obj_before;
+    Py_XDECREF(py_method);
+    if (PyEval_ThreadsInitialized())
+        PyGILState_Release(__py_gil_state);
+    return;
+}
+
+void
+PyNs3SqliteDataOutput__PythonHelper::NotifyConstructionCompleted()
+{
+    PyGILState_STATE __py_gil_state;
+    PyObject *py_method;
+    ns3::ObjectBase *self_obj_before;
+    PyObject *py_retval;
+    
+    __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+    py_method = PyObject_GetAttrString(m_pyself, (char *) "NotifyConstructionCompleted"); PyErr_Clear();
+    if (py_method == NULL || Py_TYPE(py_method) == &PyCFunction_Type) {
+        ns3::ObjectBase::NotifyConstructionCompleted();
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    self_obj_before = reinterpret_cast< PyNs3ObjectBase* >(m_pyself)->obj;
+    reinterpret_cast< PyNs3ObjectBase* >(m_pyself)->obj = (ns3::ObjectBase*) this;
+    py_retval = PyObject_CallMethod(m_pyself, (char *) "NotifyConstructionCompleted", (char *) "");
+    if (py_retval == NULL) {
+        PyErr_Print();
+        reinterpret_cast< PyNs3ObjectBase* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    if (py_retval != Py_None) {
+        PyErr_SetString(PyExc_TypeError, "function/method should return None");
+        Py_DECREF(py_retval);
+        reinterpret_cast< PyNs3ObjectBase* >(m_pyself)->obj = self_obj_before;
+        Py_XDECREF(py_method);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+    Py_DECREF(py_retval);
+    reinterpret_cast< PyNs3ObjectBase* >(m_pyself)->obj = self_obj_before;
+    Py_XDECREF(py_method);
+    if (PyEval_ThreadsInitialized())
+        PyGILState_Release(__py_gil_state);
+    return;
+}
+
+
+static int
+_wrap_PyNs3SqliteDataOutput__tp_init__0(PyNs3SqliteDataOutput *self, PyObject *args, PyObject *kwargs, PyObject **return_exception)
+{
+    PyNs3SqliteDataOutput *arg0;
+    const char *keywords[] = {"arg0", NULL};
+    
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "O!", (char **) keywords, &PyNs3SqliteDataOutput_Type, &arg0)) {
+        {
+            PyObject *exc_type, *traceback;
+            PyErr_Fetch(&exc_type, return_exception, &traceback);
+            Py_XDECREF(exc_type);
+            Py_XDECREF(traceback);
+        }
+        return -1;
+    }
+    if (Py_TYPE(self) != &PyNs3SqliteDataOutput_Type)
+    {
+        self->obj = new PyNs3SqliteDataOutput__PythonHelper(*((PyNs3SqliteDataOutput *) arg0)->obj);
+        self->obj->Ref ();
+        self->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+        ((PyNs3SqliteDataOutput__PythonHelper*) self->obj)->set_pyobj((PyObject *)self);
+        ns3::CompleteConstruct(self->obj);
+    } else {
+        // visibility: 'public'
+        self->obj = new ns3::SqliteDataOutput(*((PyNs3SqliteDataOutput *) arg0)->obj);
+        self->obj->Ref ();
+        self->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+        ns3::CompleteConstruct(self->obj);
+    }
+    return 0;
+}
+
+static int
+_wrap_PyNs3SqliteDataOutput__tp_init__1(PyNs3SqliteDataOutput *self, PyObject *args, PyObject *kwargs, PyObject **return_exception)
+{
+    const char *keywords[] = {NULL};
+    
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "", (char **) keywords)) {
+        {
+            PyObject *exc_type, *traceback;
+            PyErr_Fetch(&exc_type, return_exception, &traceback);
+            Py_XDECREF(exc_type);
+            Py_XDECREF(traceback);
+        }
+        return -1;
+    }
+    if (Py_TYPE(self) != &PyNs3SqliteDataOutput_Type)
+    {
+        self->obj = new PyNs3SqliteDataOutput__PythonHelper();
+        self->obj->Ref ();
+        self->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+        ((PyNs3SqliteDataOutput__PythonHelper*) self->obj)->set_pyobj((PyObject *)self);
+        ns3::CompleteConstruct(self->obj);
+    } else {
+        // visibility: 'public'
+        self->obj = new ns3::SqliteDataOutput();
+        self->obj->Ref ();
+        self->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+        ns3::CompleteConstruct(self->obj);
+    }
+    return 0;
+}
+
+int _wrap_PyNs3SqliteDataOutput__tp_init(PyNs3SqliteDataOutput *self, PyObject *args, PyObject *kwargs)
+{
+    int retval;
+    PyObject *error_list;
+    PyObject *exceptions[2] = {0,};
+    retval = _wrap_PyNs3SqliteDataOutput__tp_init__0(self, args, kwargs, &exceptions[0]);
+    if (!exceptions[0]) {
+        return retval;
+    }
+    retval = _wrap_PyNs3SqliteDataOutput__tp_init__1(self, args, kwargs, &exceptions[1]);
+    if (!exceptions[1]) {
+        Py_DECREF(exceptions[0]);
+        return retval;
+    }
+    error_list = PyList_New(2);
+    PyList_SET_ITEM(error_list, 0, PyObject_Str(exceptions[0]));
+    Py_DECREF(exceptions[0]);
+    PyList_SET_ITEM(error_list, 1, PyObject_Str(exceptions[1]));
+    Py_DECREF(exceptions[1]);
+    PyErr_SetObject(PyExc_TypeError, error_list);
+    Py_DECREF(error_list);
+    return -1;
+}
+
+
+PyObject *
+_wrap_PyNs3SqliteDataOutput_Output(PyNs3SqliteDataOutput *self, PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    PyNs3DataCollector *dc;
+    PyNs3SqliteDataOutput__PythonHelper *helper_class = dynamic_cast<PyNs3SqliteDataOutput__PythonHelper*> (self->obj);
+    const char *keywords[] = {"dc", NULL};
+    
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "O!", (char **) keywords, &PyNs3DataCollector_Type, &dc)) {
+        return NULL;
+    }
+    (helper_class == NULL)? (self->obj->Output(*((PyNs3DataCollector *) dc)->obj)) : (self->obj->ns3::SqliteDataOutput::Output(*((PyNs3DataCollector *) dc)->obj));
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+
+
+static PyObject*
+_wrap_PyNs3SqliteDataOutput__copy__(PyNs3SqliteDataOutput *self)
+{
+
+    PyNs3SqliteDataOutput *py_copy;
+    py_copy = PyObject_GC_New(PyNs3SqliteDataOutput, &PyNs3SqliteDataOutput_Type);
+    py_copy->inst_dict = NULL;
+    
+    py_copy->obj = new ns3::SqliteDataOutput(*self->obj);
+    py_copy->inst_dict = NULL;
+    py_copy->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+    PyNs3ObjectBase_wrapper_registry[(void *) py_copy->obj] = (PyObject *) py_copy;
+    return (PyObject*) py_copy;
+}
+
+static PyMethodDef PyNs3SqliteDataOutput_methods[] = {
+    {(char *) "Output", (PyCFunction) _wrap_PyNs3SqliteDataOutput_Output, METH_KEYWORDS|METH_VARARGS, NULL },
+    {(char *) "NotifyConstructionCompleted", (PyCFunction) PyNs3SqliteDataOutput__PythonHelper::_wrap_NotifyConstructionCompleted, METH_NOARGS, NULL },
+    {(char *) "DoInitialize", (PyCFunction) PyNs3SqliteDataOutput__PythonHelper::_wrap_DoInitialize, METH_NOARGS, NULL },
+    {(char *) "NotifyNewAggregate", (PyCFunction) PyNs3SqliteDataOutput__PythonHelper::_wrap_NotifyNewAggregate, METH_NOARGS, NULL },
+    {(char *) "DoDispose", (PyCFunction) PyNs3SqliteDataOutput__PythonHelper::_wrap_DoDispose, METH_NOARGS, NULL },
+    {(char *) "__copy__", (PyCFunction) _wrap_PyNs3SqliteDataOutput__copy__, METH_NOARGS, NULL},
+    {NULL, NULL, 0, NULL}
+};
+
+static void
+PyNs3SqliteDataOutput__tp_clear(PyNs3SqliteDataOutput *self)
+{
+    Py_CLEAR(self->inst_dict);
+    if (self->obj) {
+    ns3::SqliteDataOutput *tmp = self->obj;
+    self->obj = NULL;
+    tmp->Unref();
+}
+}
+
+
+static int
+PyNs3SqliteDataOutput__tp_traverse(PyNs3SqliteDataOutput *self, visitproc visit, void *arg)
+{
+    Py_VISIT(self->inst_dict);
+    
+    if (self->obj && typeid(*self->obj).name() == typeid(PyNs3SqliteDataOutput__PythonHelper).name()  && self->obj->GetReferenceCount() == 1)
+        Py_VISIT((PyObject *) self);
+
+    return 0;
+}
+
+
+static void
+_wrap_PyNs3SqliteDataOutput__tp_dealloc(PyNs3SqliteDataOutput *self)
+{
+    std::map<void*, PyObject*>::iterator wrapper_lookup_iter;
+    wrapper_lookup_iter = PyNs3ObjectBase_wrapper_registry.find((void *) self->obj);
+    if (wrapper_lookup_iter != PyNs3ObjectBase_wrapper_registry.end()) {
+        PyNs3ObjectBase_wrapper_registry.erase(wrapper_lookup_iter);
+    }
+    
+    PyNs3SqliteDataOutput__tp_clear(self);
+    Py_TYPE(self)->tp_free((PyObject*)self);
+}
+
+static PyObject*
+_wrap_PyNs3SqliteDataOutput__tp_richcompare (PyNs3SqliteDataOutput *PYBINDGEN_UNUSED(self), PyNs3SqliteDataOutput *other, int opid)
+{
+    
+    if (!PyObject_IsInstance((PyObject*) other, (PyObject*) &PyNs3SqliteDataOutput_Type)) {
+        Py_INCREF(Py_NotImplemented);
+        return Py_NotImplemented;
+    }
+    switch (opid)
+    {
+    case Py_LT:
+        Py_INCREF(Py_NotImplemented);
+        return Py_NotImplemented;
+    case Py_LE:
+        Py_INCREF(Py_NotImplemented);
+        return Py_NotImplemented;
+    case Py_EQ:
+        Py_INCREF(Py_NotImplemented);
+        return Py_NotImplemented;
+    case Py_NE:
+        Py_INCREF(Py_NotImplemented);
+        return Py_NotImplemented;
+    case Py_GE:
+        Py_INCREF(Py_NotImplemented);
+        return Py_NotImplemented;
+    case Py_GT:
+        Py_INCREF(Py_NotImplemented);
+        return Py_NotImplemented;
+    } /* closes switch (opid) */
+    Py_INCREF(Py_NotImplemented);
+    return Py_NotImplemented;
+}
+
+PyTypeObject PyNs3SqliteDataOutput_Type = {
+    PyVarObject_HEAD_INIT(NULL, 0)
+    (char *) "stats.SqliteDataOutput",            /* tp_name */
+    sizeof(PyNs3SqliteDataOutput),                  /* tp_basicsize */
+    0,                                 /* tp_itemsize */
+    /* methods */
+    (destructor)_wrap_PyNs3SqliteDataOutput__tp_dealloc,        /* tp_dealloc */
+    (printfunc)0,                      /* tp_print */
+    (getattrfunc)NULL,       /* tp_getattr */
+    (setattrfunc)NULL,       /* tp_setattr */
+    (cmpfunc)NULL,           /* tp_compare */
+    (reprfunc)NULL,             /* tp_repr */
+    (PyNumberMethods*)NULL,     /* tp_as_number */
+    (PySequenceMethods*)NULL, /* tp_as_sequence */
+    (PyMappingMethods*)NULL,   /* tp_as_mapping */
+    (hashfunc)NULL,             /* tp_hash */
+    (ternaryfunc)NULL,          /* tp_call */
+    (reprfunc)NULL,              /* tp_str */
+    (getattrofunc)NULL,     /* tp_getattro */
+    (setattrofunc)NULL,     /* tp_setattro */
+    (PyBufferProcs*)NULL,  /* tp_as_buffer */
+    Py_TPFLAGS_BASETYPE|Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_GC,                      /* tp_flags */
+    NULL,                        /* Documentation string */
+    (traverseproc)PyNs3SqliteDataOutput__tp_traverse,     /* tp_traverse */
+    (inquiry)PyNs3SqliteDataOutput__tp_clear,             /* tp_clear */
+    (richcmpfunc)_wrap_PyNs3SqliteDataOutput__tp_richcompare,   /* tp_richcompare */
+    0,             /* tp_weaklistoffset */
+    (getiterfunc)NULL,          /* tp_iter */
+    (iternextfunc)NULL,     /* tp_iternext */
+    (struct PyMethodDef*)PyNs3SqliteDataOutput_methods, /* tp_methods */
+    (struct PyMemberDef*)0,              /* tp_members */
+    0,                     /* tp_getset */
+    NULL,                              /* tp_base */
+    NULL,                              /* tp_dict */
+    (descrgetfunc)NULL,    /* tp_descr_get */
+    (descrsetfunc)NULL,    /* tp_descr_set */
+    offsetof(PyNs3SqliteDataOutput, inst_dict),                 /* tp_dictoffset */
+    (initproc)_wrap_PyNs3SqliteDataOutput__tp_init,             /* tp_init */
+    (allocfunc)PyType_GenericAlloc,           /* tp_alloc */
+    (newfunc)PyType_GenericNew,               /* tp_new */
+    (freefunc)0,             /* tp_free */
+    (inquiry)NULL,             /* tp_is_gc */
+    NULL,                              /* tp_bases */
+    NULL,                              /* tp_mro */
+    NULL,                              /* tp_cache */
+    NULL,                              /* tp_subclasses */
+    NULL,                              /* tp_weaklist */
+    (destructor) NULL                  /* tp_del */
+};
+
+
+
+
+PyObject *
 PyNs3TimeMinMaxAvgTotalCalculator__PythonHelper::_wrap_NotifyConstructionCompleted(PyNs3TimeMinMaxAvgTotalCalculator *self)
 {
     PyObject *py_retval;
@@ -17120,6 +17721,13 @@ MOD_INIT(stats)
         return MOD_ERROR;
     }
     PyModule_AddObject(m, (char *) "Probe", (PyObject *) &PyNs3Probe_Type);
+    PyNs3SimpleRefCount__Ns3Object_Ns3ObjectBase_Ns3ObjectDeleter__typeid_map.register_wrapper(typeid(ns3::SqliteDataOutput), &PyNs3SqliteDataOutput_Type);
+    /* Register the 'ns3::SqliteDataOutput' class */
+    PyNs3SqliteDataOutput_Type.tp_base = &PyNs3DataOutputInterface_Type;
+    if (PyType_Ready(&PyNs3SqliteDataOutput_Type)) {
+        return MOD_ERROR;
+    }
+    PyModule_AddObject(m, (char *) "SqliteDataOutput", (PyObject *) &PyNs3SqliteDataOutput_Type);
     PyNs3SimpleRefCount__Ns3Object_Ns3ObjectBase_Ns3ObjectDeleter__typeid_map.register_wrapper(typeid(ns3::TimeMinMaxAvgTotalCalculator), &PyNs3TimeMinMaxAvgTotalCalculator_Type);
     /* Register the 'ns3::TimeMinMaxAvgTotalCalculator' class */
     PyNs3TimeMinMaxAvgTotalCalculator_Type.tp_base = &PyNs3DataCalculator_Type;

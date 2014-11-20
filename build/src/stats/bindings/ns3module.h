@@ -1534,6 +1534,82 @@ NS_OBJECT_ENSURE_REGISTERED (PyNs3Probe__PythonHelper);
 
 typedef struct {
     PyObject_HEAD
+    ns3::SqliteDataOutput *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3SqliteDataOutput;
+
+
+extern PyTypeObject PyNs3SqliteDataOutput_Type;
+
+class PyNs3SqliteDataOutput__PythonHelper : public ns3::SqliteDataOutput
+{
+public:
+    PyObject *m_pyself;
+    PyNs3SqliteDataOutput__PythonHelper(ns3::SqliteDataOutput const & arg0)
+        : ns3::SqliteDataOutput(arg0), m_pyself(NULL)
+        {}
+
+    PyNs3SqliteDataOutput__PythonHelper()
+        : ns3::SqliteDataOutput(), m_pyself(NULL)
+        {}
+
+
+    void set_pyobj(PyObject *pyobj)
+    {
+        Py_XDECREF(m_pyself);
+        Py_INCREF(pyobj);
+        m_pyself = pyobj;
+    }
+
+    virtual ~PyNs3SqliteDataOutput__PythonHelper()
+    {
+        Py_CLEAR(m_pyself);
+    }
+
+
+    static PyObject * _wrap_NotifyConstructionCompleted(PyNs3SqliteDataOutput *self);
+    inline void NotifyConstructionCompleted__parent_caller()
+    { ns3::ObjectBase::NotifyConstructionCompleted(); }
+
+    static PyObject * _wrap_DoInitialize(PyNs3SqliteDataOutput *self);
+    inline void DoInitialize__parent_caller()
+    { ns3::Object::DoInitialize(); }
+
+    static PyObject * _wrap_NotifyNewAggregate(PyNs3SqliteDataOutput *self);
+    inline void NotifyNewAggregate__parent_caller()
+    { ns3::Object::NotifyNewAggregate(); }
+
+    static PyObject * _wrap_DoDispose(PyNs3SqliteDataOutput *self);
+    inline void DoDispose__parent_caller()
+    { ns3::SqliteDataOutput::DoDispose(); }
+
+    virtual void Output(ns3::DataCollector & dc);
+
+    virtual void DoDispose();
+
+    virtual ns3::TypeId GetInstanceTypeId() const;
+
+    virtual void DoInitialize();
+
+    virtual void NotifyNewAggregate();
+
+    virtual void NotifyConstructionCompleted();
+
+    static ns3::TypeId GetTypeId (void)
+    {
+      static ns3::TypeId tid = ns3::TypeId ("PyNs3SqliteDataOutput__PythonHelper")
+        .SetParent< ns3::SqliteDataOutput > ()
+        ;
+      return tid;
+    }
+};
+
+NS_OBJECT_ENSURE_REGISTERED (PyNs3SqliteDataOutput__PythonHelper);
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::TimeMinMaxAvgTotalCalculator *obj;
     PyObject *inst_dict;
     PyBindGenWrapperFlags flags:8;

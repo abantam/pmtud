@@ -29,8 +29,5 @@ int main() {
 	NetDeviceContainer dev0 = p2p.Install(network1_nodes);
 	NetDeviceContainer dev1 = p2p.Install(network2_nodes);
 
-	Simulator::Run();
-	Simulator::Destroy();
-
 	return 0;
 }

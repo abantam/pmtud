@@ -74,6 +74,23 @@ int main(int argc, char *argv[]) {
     
     InternetStackHelper stack;
     stack.InstallAll();
-}
+    
+    Ipv4AddressHelper address;
+    
+    address.SetBase(NET_ADD1, NET_MASK, FIRST_NO);
+    Ipv4InterfaceContainer ifs1 = address.Assign(devices1);
+    NS_LOG_INFO("Network 1: " << ifs1.GetAddress(0, 0) << " - " << ifs1.GetAddress(1, 0));
+    
+    address.SetBase(NET_ADD2, NET_MASK, FIRST_NO);
+    Ipv4InterfaceContainer ifs2 = address.Assign(devices2);
+    NS_LOG_INFO("Network 2: " << ifs2.GetAddress(0, 0) << " - " << ifs2.GetAddress(1, 0));
+    
+    address.SetBase(NET_ADD3, NET_MASK, FIRST_NO);
+    Ipv4InterfaceContainer ifs3 = address.Assign(devices3);
+    NS_LOG_INFO("Network 3: " << ifs3.GetAddress(0, 0) << " - " << ifs3.GetAddress(1, 0));
+    
+    NS_LOG_INFO("Initialize Global Routing.");
+    Ipv4GlobalRoutingHelper::PopularRoutingTablets();
+} 
 
 

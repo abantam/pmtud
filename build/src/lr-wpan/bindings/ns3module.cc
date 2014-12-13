@@ -622,6 +622,25 @@ static PyGetSetDef PyNs3LrWpanEdPower__getsets[] = {
 static int
 _wrap_PyNs3LrWpanEdPower__tp_init__0(PyNs3LrWpanEdPower *self, PyObject *args, PyObject *kwargs, PyObject **return_exception)
 {
+    const char *keywords[] = {NULL};
+    
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "", (char **) keywords)) {
+        {
+            PyObject *exc_type, *traceback;
+            PyErr_Fetch(&exc_type, return_exception, &traceback);
+            Py_XDECREF(exc_type);
+            Py_XDECREF(traceback);
+        }
+        return -1;
+    }
+    self->obj = new ns3::LrWpanEdPower();
+    self->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+    return 0;
+}
+
+static int
+_wrap_PyNs3LrWpanEdPower__tp_init__1(PyNs3LrWpanEdPower *self, PyObject *args, PyObject *kwargs, PyObject **return_exception)
+{
     PyNs3LrWpanEdPower *arg0;
     const char *keywords[] = {"arg0", NULL};
     
@@ -635,25 +654,6 @@ _wrap_PyNs3LrWpanEdPower__tp_init__0(PyNs3LrWpanEdPower *self, PyObject *args, P
         return -1;
     }
     self->obj = new ns3::LrWpanEdPower(*((PyNs3LrWpanEdPower *) arg0)->obj);
-    self->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
-    return 0;
-}
-
-static int
-_wrap_PyNs3LrWpanEdPower__tp_init__1(PyNs3LrWpanEdPower *self, PyObject *args, PyObject *kwargs, PyObject **return_exception)
-{
-    const char *keywords[] = {NULL};
-    
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "", (char **) keywords)) {
-        {
-            PyObject *exc_type, *traceback;
-            PyErr_Fetch(&exc_type, return_exception, &traceback);
-            Py_XDECREF(exc_type);
-            Py_XDECREF(traceback);
-        }
-        return -1;
-    }
-    self->obj = new ns3::LrWpanEdPower();
     self->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
     return 0;
 }
@@ -12715,19 +12715,14 @@ MOD_INIT(lr_wpan)
         return MOD_ERROR;
     }
     PyModule_AddObject(m, (char *) "LrWpanNetDevice", (PyObject *) &PyNs3LrWpanNetDevice_Type);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_BUSY", ns3::IEEE_802_15_4_PHY_BUSY);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_BUSY_RX", ns3::IEEE_802_15_4_PHY_BUSY_RX);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_BUSY_TX", ns3::IEEE_802_15_4_PHY_BUSY_TX);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_FORCE_TRX_OFF", ns3::IEEE_802_15_4_PHY_FORCE_TRX_OFF);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_IDLE", ns3::IEEE_802_15_4_PHY_IDLE);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_INVALID_PARAMETER", ns3::IEEE_802_15_4_PHY_INVALID_PARAMETER);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_RX_ON", ns3::IEEE_802_15_4_PHY_RX_ON);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_SUCCESS", ns3::IEEE_802_15_4_PHY_SUCCESS);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_TRX_OFF", ns3::IEEE_802_15_4_PHY_TRX_OFF);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_TX_ON", ns3::IEEE_802_15_4_PHY_TX_ON);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_UNSUPPORTED_ATTRIBUTE", ns3::IEEE_802_15_4_PHY_UNSUPPORTED_ATTRIBUTE);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_READ_ONLY", ns3::IEEE_802_15_4_PHY_READ_ONLY);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_UNSPECIFIED", ns3::IEEE_802_15_4_PHY_UNSPECIFIED);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_868MHZ_BPSK", ns3::IEEE_802_15_4_868MHZ_BPSK);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_915MHZ_BPSK", ns3::IEEE_802_15_4_915MHZ_BPSK);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_868MHZ_ASK", ns3::IEEE_802_15_4_868MHZ_ASK);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_915MHZ_ASK", ns3::IEEE_802_15_4_915MHZ_ASK);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_868MHZ_OQPSK", ns3::IEEE_802_15_4_868MHZ_OQPSK);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_915MHZ_OQPSK", ns3::IEEE_802_15_4_915MHZ_OQPSK);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_2_4GHZ_OQPSK", ns3::IEEE_802_15_4_2_4GHZ_OQPSK);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_INVALID_PHY_OPTION", ns3::IEEE_802_15_4_INVALID_PHY_OPTION);
     PyModule_AddIntConstant(m, (char *) "TX_OPTION_NONE", ns3::TX_OPTION_NONE);
     PyModule_AddIntConstant(m, (char *) "TX_OPTION_ACK", ns3::TX_OPTION_ACK);
     PyModule_AddIntConstant(m, (char *) "TX_OPTION_GTS", ns3::TX_OPTION_GTS);
@@ -12744,6 +12739,19 @@ MOD_INIT(lr_wpan)
     PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_UNAVAILABLE_KEY", ns3::IEEE_802_15_4_UNAVAILABLE_KEY);
     PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_UNSUPPORTED_SECURITY", ns3::IEEE_802_15_4_UNSUPPORTED_SECURITY);
     PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_INVALID_PARAMETER", ns3::IEEE_802_15_4_INVALID_PARAMETER);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_BUSY", ns3::IEEE_802_15_4_PHY_BUSY);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_BUSY_RX", ns3::IEEE_802_15_4_PHY_BUSY_RX);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_BUSY_TX", ns3::IEEE_802_15_4_PHY_BUSY_TX);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_FORCE_TRX_OFF", ns3::IEEE_802_15_4_PHY_FORCE_TRX_OFF);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_IDLE", ns3::IEEE_802_15_4_PHY_IDLE);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_INVALID_PARAMETER", ns3::IEEE_802_15_4_PHY_INVALID_PARAMETER);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_RX_ON", ns3::IEEE_802_15_4_PHY_RX_ON);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_SUCCESS", ns3::IEEE_802_15_4_PHY_SUCCESS);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_TRX_OFF", ns3::IEEE_802_15_4_PHY_TRX_OFF);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_TX_ON", ns3::IEEE_802_15_4_PHY_TX_ON);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_UNSUPPORTED_ATTRIBUTE", ns3::IEEE_802_15_4_PHY_UNSUPPORTED_ATTRIBUTE);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_READ_ONLY", ns3::IEEE_802_15_4_PHY_READ_ONLY);
+    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_PHY_UNSPECIFIED", ns3::IEEE_802_15_4_PHY_UNSPECIFIED);
     PyModule_AddIntConstant(m, (char *) "phyCurrentChannel", ns3::phyCurrentChannel);
     PyModule_AddIntConstant(m, (char *) "phyChannelsSupported", ns3::phyChannelsSupported);
     PyModule_AddIntConstant(m, (char *) "phyTransmitPower", ns3::phyTransmitPower);
@@ -12752,6 +12760,11 @@ MOD_INIT(lr_wpan)
     PyModule_AddIntConstant(m, (char *) "phyMaxFrameDuration", ns3::phyMaxFrameDuration);
     PyModule_AddIntConstant(m, (char *) "phySHRDuration", ns3::phySHRDuration);
     PyModule_AddIntConstant(m, (char *) "phySymbolsPerOctet", ns3::phySymbolsPerOctet);
+    PyModule_AddIntConstant(m, (char *) "ASSOCIATED", ns3::ASSOCIATED);
+    PyModule_AddIntConstant(m, (char *) "PAN_AT_CAPACITY", ns3::PAN_AT_CAPACITY);
+    PyModule_AddIntConstant(m, (char *) "PAN_ACCESS_DENIED", ns3::PAN_ACCESS_DENIED);
+    PyModule_AddIntConstant(m, (char *) "ASSOCIATED_WITHOUT_ADDRESS", ns3::ASSOCIATED_WITHOUT_ADDRESS);
+    PyModule_AddIntConstant(m, (char *) "DISASSOCIATED", ns3::DISASSOCIATED);
     PyModule_AddIntConstant(m, (char *) "MAC_IDLE", ns3::MAC_IDLE);
     PyModule_AddIntConstant(m, (char *) "MAC_CSMA", ns3::MAC_CSMA);
     PyModule_AddIntConstant(m, (char *) "MAC_SENDING", ns3::MAC_SENDING);
@@ -12759,19 +12772,6 @@ MOD_INIT(lr_wpan)
     PyModule_AddIntConstant(m, (char *) "CHANNEL_ACCESS_FAILURE", ns3::CHANNEL_ACCESS_FAILURE);
     PyModule_AddIntConstant(m, (char *) "CHANNEL_IDLE", ns3::CHANNEL_IDLE);
     PyModule_AddIntConstant(m, (char *) "SET_PHY_TX_ON", ns3::SET_PHY_TX_ON);
-    PyModule_AddIntConstant(m, (char *) "ASSOCIATED", ns3::ASSOCIATED);
-    PyModule_AddIntConstant(m, (char *) "PAN_AT_CAPACITY", ns3::PAN_AT_CAPACITY);
-    PyModule_AddIntConstant(m, (char *) "PAN_ACCESS_DENIED", ns3::PAN_ACCESS_DENIED);
-    PyModule_AddIntConstant(m, (char *) "ASSOCIATED_WITHOUT_ADDRESS", ns3::ASSOCIATED_WITHOUT_ADDRESS);
-    PyModule_AddIntConstant(m, (char *) "DISASSOCIATED", ns3::DISASSOCIATED);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_868MHZ_BPSK", ns3::IEEE_802_15_4_868MHZ_BPSK);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_915MHZ_BPSK", ns3::IEEE_802_15_4_915MHZ_BPSK);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_868MHZ_ASK", ns3::IEEE_802_15_4_868MHZ_ASK);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_915MHZ_ASK", ns3::IEEE_802_15_4_915MHZ_ASK);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_868MHZ_OQPSK", ns3::IEEE_802_15_4_868MHZ_OQPSK);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_915MHZ_OQPSK", ns3::IEEE_802_15_4_915MHZ_OQPSK);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_2_4GHZ_OQPSK", ns3::IEEE_802_15_4_2_4GHZ_OQPSK);
-    PyModule_AddIntConstant(m, (char *) "IEEE_802_15_4_INVALID_PHY_OPTION", ns3::IEEE_802_15_4_INVALID_PHY_OPTION);
     PyModule_AddIntConstant(m, (char *) "NO_PANID_ADDR", ns3::NO_PANID_ADDR);
     PyModule_AddIntConstant(m, (char *) "ADDR_MODE_RESERVED", ns3::ADDR_MODE_RESERVED);
     PyModule_AddIntConstant(m, (char *) "SHORT_ADDR", ns3::SHORT_ADDR);

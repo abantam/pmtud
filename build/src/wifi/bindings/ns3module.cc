@@ -29390,6 +29390,28 @@ _wrap_PyNs3YansWifiPhy_ResumeFromSleep(PyNs3YansWifiPhy *self)
 
 
 PyObject *
+_wrap_PyNs3YansWifiPhy_StartReceivePacket(PyNs3YansWifiPhy *self, PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    PyNs3Packet *packet;
+    ns3::Packet *packet_ptr;
+    double rxPowerDbm;
+    PyNs3WifiTxVector *txVector;
+    ns3::WifiPreamble preamble;
+    const char *keywords[] = {"packet", "rxPowerDbm", "txVector", "preamble", NULL};
+    
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "O!dO!i", (char **) keywords, &PyNs3Packet_Type, &packet, &rxPowerDbm, &PyNs3WifiTxVector_Type, &txVector, &preamble)) {
+        return NULL;
+    }
+    packet_ptr = (packet ? packet->obj : NULL);
+    self->obj->StartReceivePacket(ns3::Ptr< ns3::Packet  > (packet_ptr), rxPowerDbm, *((PyNs3WifiTxVector *) txVector)->obj, preamble);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+
+
+PyObject *
 _wrap_PyNs3YansWifiPhy_SetRxNoiseFigure(PyNs3YansWifiPhy *self, PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
@@ -29443,28 +29465,6 @@ _wrap_PyNs3YansWifiPhy_McsToWifiMode(PyNs3YansWifiPhy *self, PyObject *args, PyO
     py_WifiMode->obj = new ns3::WifiMode(retval);
     PyNs3WifiMode_wrapper_registry[(void *) py_WifiMode->obj] = (PyObject *) py_WifiMode;
     py_retval = Py_BuildValue((char *) "N", py_WifiMode);
-    return py_retval;
-}
-
-
-PyObject *
-_wrap_PyNs3YansWifiPhy_StartReceivePacket(PyNs3YansWifiPhy *self, PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    PyNs3Packet *packet;
-    ns3::Packet *packet_ptr;
-    double rxPowerDbm;
-    PyNs3WifiTxVector *txVector;
-    ns3::WifiPreamble preamble;
-    const char *keywords[] = {"packet", "rxPowerDbm", "txVector", "preamble", NULL};
-    
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "O!dO!i", (char **) keywords, &PyNs3Packet_Type, &packet, &rxPowerDbm, &PyNs3WifiTxVector_Type, &txVector, &preamble)) {
-        return NULL;
-    }
-    packet_ptr = (packet ? packet->obj : NULL);
-    self->obj->StartReceivePacket(ns3::Ptr< ns3::Packet  > (packet_ptr), rxPowerDbm, *((PyNs3WifiTxVector *) txVector)->obj, preamble);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
     return py_retval;
 }
 
@@ -30112,10 +30112,10 @@ static PyMethodDef PyNs3YansWifiPhy_methods[] = {
     {(char *) "GetNModes", (PyCFunction) _wrap_PyNs3YansWifiPhy_GetNModes, METH_NOARGS, NULL },
     {(char *) "SetSleepMode", (PyCFunction) _wrap_PyNs3YansWifiPhy_SetSleepMode, METH_NOARGS, NULL },
     {(char *) "ResumeFromSleep", (PyCFunction) _wrap_PyNs3YansWifiPhy_ResumeFromSleep, METH_NOARGS, NULL },
+    {(char *) "StartReceivePacket", (PyCFunction) _wrap_PyNs3YansWifiPhy_StartReceivePacket, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "SetRxNoiseFigure", (PyCFunction) _wrap_PyNs3YansWifiPhy_SetRxNoiseFigure, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "GetTypeId", (PyCFunction) _wrap_PyNs3YansWifiPhy_GetTypeId, METH_NOARGS|METH_STATIC, NULL },
     {(char *) "McsToWifiMode", (PyCFunction) _wrap_PyNs3YansWifiPhy_McsToWifiMode, METH_KEYWORDS|METH_VARARGS, NULL },
-    {(char *) "StartReceivePacket", (PyCFunction) _wrap_PyNs3YansWifiPhy_StartReceivePacket, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "ConfigureStandard", (PyCFunction) _wrap_PyNs3YansWifiPhy_ConfigureStandard, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "WifiModeToMcs", (PyCFunction) _wrap_PyNs3YansWifiPhy_WifiModeToMcs, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "GetLastRxStartTime", (PyCFunction) _wrap_PyNs3YansWifiPhy_GetLastRxStartTime, METH_NOARGS, NULL },

@@ -2710,13 +2710,13 @@ _wrap_PyNs3AodvRoutingProtocol_SetIpv4(PyNs3AodvRoutingProtocol *self, PyObject 
 
 
 PyObject *
-_wrap_PyNs3AodvRoutingProtocol_DoDispose(PyNs3AodvRoutingProtocol *self)
+_wrap_PyNs3AodvRoutingProtocol_GetHelloEnable(PyNs3AodvRoutingProtocol *self)
 {
     PyObject *py_retval;
+    bool retval;
     
-    self->obj->DoDispose();
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
+    retval = self->obj->GetHelloEnable();
+    py_retval = Py_BuildValue((char *) "N", PyBool_FromLong(retval));
     return py_retval;
 }
 
@@ -2768,13 +2768,13 @@ _wrap_PyNs3AodvRoutingProtocol_GetMaxQueueLen(PyNs3AodvRoutingProtocol *self)
 
 
 PyObject *
-_wrap_PyNs3AodvRoutingProtocol_GetHelloEnable(PyNs3AodvRoutingProtocol *self)
+_wrap_PyNs3AodvRoutingProtocol_DoDispose(PyNs3AodvRoutingProtocol *self)
 {
     PyObject *py_retval;
-    bool retval;
     
-    retval = self->obj->GetHelloEnable();
-    py_retval = Py_BuildValue((char *) "N", PyBool_FromLong(retval));
+    self->obj->DoDispose();
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
     return py_retval;
 }
 
@@ -3010,11 +3010,11 @@ static PyMethodDef PyNs3AodvRoutingProtocol_methods[] = {
     {(char *) "SetHelloEnable", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_SetHelloEnable, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "NotifyInterfaceDown", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_NotifyInterfaceDown, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "SetIpv4", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_SetIpv4, METH_KEYWORDS|METH_VARARGS, NULL },
-    {(char *) "DoDispose", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_DoDispose, METH_NOARGS, NULL },
+    {(char *) "GetHelloEnable", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_GetHelloEnable, METH_NOARGS, NULL },
     {(char *) "SetMaxQueueTime", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_SetMaxQueueTime, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "NotifyInterfaceUp", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_NotifyInterfaceUp, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "GetMaxQueueLen", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_GetMaxQueueLen, METH_NOARGS, NULL },
-    {(char *) "GetHelloEnable", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_GetHelloEnable, METH_NOARGS, NULL },
+    {(char *) "DoDispose", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_DoDispose, METH_NOARGS, NULL },
     {(char *) "GetDesinationOnlyFlag", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_GetDesinationOnlyFlag, METH_NOARGS, NULL },
     {(char *) "PrintRoutingTable", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_PrintRoutingTable, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "NotifyRemoveAddress", (PyCFunction) _wrap_PyNs3AodvRoutingProtocol_NotifyRemoveAddress, METH_KEYWORDS|METH_VARARGS, NULL },

@@ -10310,12 +10310,12 @@ _wrap_PyNs3DsrErrorBuffEntry_SetExpireTime(PyNs3DsrErrorBuffEntry *self, PyObjec
 
 
 PyObject *
-_wrap_PyNs3DsrErrorBuffEntry_GetSource(PyNs3DsrErrorBuffEntry *self)
+_wrap_PyNs3DsrErrorBuffEntry_GetDestination(PyNs3DsrErrorBuffEntry *self)
 {
     PyObject *py_retval;
     PyNs3Ipv4Address *py_Ipv4Address;
     
-    ns3::Ipv4Address retval = self->obj->GetSource();
+    ns3::Ipv4Address retval = self->obj->GetDestination();
     py_Ipv4Address = PyObject_New(PyNs3Ipv4Address, &PyNs3Ipv4Address_Type);
     py_Ipv4Address->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
     py_Ipv4Address->obj = new ns3::Ipv4Address(retval);
@@ -10342,12 +10342,12 @@ _wrap_PyNs3DsrErrorBuffEntry_GetExpireTime(PyNs3DsrErrorBuffEntry *self)
 
 
 PyObject *
-_wrap_PyNs3DsrErrorBuffEntry_GetDestination(PyNs3DsrErrorBuffEntry *self)
+_wrap_PyNs3DsrErrorBuffEntry_GetSource(PyNs3DsrErrorBuffEntry *self)
 {
     PyObject *py_retval;
     PyNs3Ipv4Address *py_Ipv4Address;
     
-    ns3::Ipv4Address retval = self->obj->GetDestination();
+    ns3::Ipv4Address retval = self->obj->GetSource();
     py_Ipv4Address = PyObject_New(PyNs3Ipv4Address, &PyNs3Ipv4Address_Type);
     py_Ipv4Address->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
     py_Ipv4Address->obj = new ns3::Ipv4Address(retval);
@@ -10395,9 +10395,9 @@ static PyMethodDef PyNs3DsrErrorBuffEntry_methods[] = {
     {(char *) "GetProtocol", (PyCFunction) _wrap_PyNs3DsrErrorBuffEntry_GetProtocol, METH_NOARGS, NULL },
     {(char *) "GetPacket", (PyCFunction) _wrap_PyNs3DsrErrorBuffEntry_GetPacket, METH_NOARGS, NULL },
     {(char *) "SetExpireTime", (PyCFunction) _wrap_PyNs3DsrErrorBuffEntry_SetExpireTime, METH_KEYWORDS|METH_VARARGS, NULL },
-    {(char *) "GetSource", (PyCFunction) _wrap_PyNs3DsrErrorBuffEntry_GetSource, METH_NOARGS, NULL },
-    {(char *) "GetExpireTime", (PyCFunction) _wrap_PyNs3DsrErrorBuffEntry_GetExpireTime, METH_NOARGS, NULL },
     {(char *) "GetDestination", (PyCFunction) _wrap_PyNs3DsrErrorBuffEntry_GetDestination, METH_NOARGS, NULL },
+    {(char *) "GetExpireTime", (PyCFunction) _wrap_PyNs3DsrErrorBuffEntry_GetExpireTime, METH_NOARGS, NULL },
+    {(char *) "GetSource", (PyCFunction) _wrap_PyNs3DsrErrorBuffEntry_GetSource, METH_NOARGS, NULL },
     {(char *) "SetSource", (PyCFunction) _wrap_PyNs3DsrErrorBuffEntry_SetSource, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "__copy__", (PyCFunction) _wrap_PyNs3DsrErrorBuffEntry__copy__, METH_NOARGS, NULL},
     {NULL, NULL, 0, NULL}

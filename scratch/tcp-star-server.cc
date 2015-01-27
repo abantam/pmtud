@@ -72,7 +72,7 @@ main (int argc, char *argv[])
 
   // Set up some default values for the simulation.
   Config::SetDefault ("ns3::OnOffApplication::PacketSize", UintegerValue (250));
-  Config::SetDefault ("ns3::OnOffApplication::DataRate", StringValue ("5kb/s"));
+  Config::SetDefault ("ns3::OnOffApplication::DataRate", StringValue ("10kb/s"));
   uint32_t N = 9; //number of nodes in the star
 
   // Allow the user to override any of the defaults and the above

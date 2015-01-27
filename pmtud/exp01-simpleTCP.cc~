@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) {
     
     PointToPointHelper p2p1;
     p2p1.SetDeviceAttribute("DataRate", StringValue("5Mbps"));
-    p2p1.SetDeviceAttribute("Delay", StringValue("2ms"));
+    //p2p1.SetDeviceAttribute("Delay", StringValue("2ms"));
     p2p1.SetQueue("ns3::DropTailQueue");
     
     NetDeviceContainer devices1;
@@ -66,7 +66,7 @@ int main(int argc, char *argv[]) {
     
     PointToPointHelper p2p2;
     p2p2.SetDeviceAttribute("DataRate", StringValue("800Kbps"));
-    p2p2.SetDeviceAttribute("Delay", StringValue("5ms"));
+    //p2p2.SetDeviceAttribute("Delay", StringValue("5ms"));
     p2p2.SetQueue("ns3::DropTailQueue");
     
     NetDeviceContainer devices3;
@@ -90,7 +90,7 @@ int main(int argc, char *argv[]) {
     NS_LOG_INFO("Network 3: " << ifs3.GetAddress(0, 0) << " - " << ifs3.GetAddress(1, 0));
     
     NS_LOG_INFO("Initialize Global Routing.");
-    Ipv4GlobalRoutingHelper::PopulateRoutingTablets();
+    Ipv4GlobalRoutingHelper::PopulateRoutingTables();
     
     //BulkSendHelperでシミュレートされるＦＴＰソケットを生成
     AddressValue remoteAddress(InetSocketAddress(ifs3.GetAddress(1, 0), PORT));

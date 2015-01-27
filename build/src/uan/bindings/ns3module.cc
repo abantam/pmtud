@@ -29412,6 +29412,23 @@ _wrap_PyNs3AcousticModemEnergyModel_SetRxPowerW(PyNs3AcousticModemEnergyModel *s
 
 
 PyObject *
+_wrap_PyNs3AcousticModemEnergyModel_SetTxPowerW(PyNs3AcousticModemEnergyModel *self, PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    double txPowerW;
+    const char *keywords[] = {"txPowerW", NULL};
+    
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "d", (char **) keywords, &txPowerW)) {
+        return NULL;
+    }
+    self->obj->SetTxPowerW(txPowerW);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+
+
+PyObject *
 _wrap_PyNs3AcousticModemEnergyModel_SetSleepPowerW(PyNs3AcousticModemEnergyModel *self, PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
@@ -29473,23 +29490,6 @@ _wrap_PyNs3AcousticModemEnergyModel_ChangeState(PyNs3AcousticModemEnergyModel *s
         return NULL;
     }
     (helper_class == NULL)? (self->obj->ChangeState(newState)) : (self->obj->ns3::AcousticModemEnergyModel::ChangeState(newState));
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-
-
-PyObject *
-_wrap_PyNs3AcousticModemEnergyModel_SetTxPowerW(PyNs3AcousticModemEnergyModel *self, PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    double txPowerW;
-    const char *keywords[] = {"txPowerW", NULL};
-    
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "d", (char **) keywords, &txPowerW)) {
-        return NULL;
-    }
-    self->obj->SetTxPowerW(txPowerW);
     Py_INCREF(Py_None);
     py_retval = Py_None;
     return py_retval;
@@ -29619,11 +29619,11 @@ static PyMethodDef PyNs3AcousticModemEnergyModel_methods[] = {
     {(char *) "SetEnergyDepletionCallback", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_SetEnergyDepletionCallback, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "GetTypeId", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_GetTypeId, METH_NOARGS|METH_STATIC, NULL },
     {(char *) "SetRxPowerW", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_SetRxPowerW, METH_KEYWORDS|METH_VARARGS, NULL },
+    {(char *) "SetTxPowerW", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_SetTxPowerW, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "SetSleepPowerW", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_SetSleepPowerW, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "GetTotalEnergyConsumption", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_GetTotalEnergyConsumption, METH_NOARGS, NULL },
     {(char *) "SetNode", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_SetNode, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "ChangeState", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_ChangeState, METH_KEYWORDS|METH_VARARGS, NULL },
-    {(char *) "SetTxPowerW", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_SetTxPowerW, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "SetIdlePowerW", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_SetIdlePowerW, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "GetSleepPowerW", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_GetSleepPowerW, METH_NOARGS, NULL },
     {(char *) "GetRxPowerW", (PyCFunction) _wrap_PyNs3AcousticModemEnergyModel_GetRxPowerW, METH_NOARGS, NULL },

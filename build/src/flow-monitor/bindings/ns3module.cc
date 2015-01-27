@@ -2593,11 +2593,11 @@ std::map<void*, PyObject*> PyNs3FlowMonitorFlowStats_wrapper_registry;
 static PyObject* _wrap_PyNs3FlowMonitorFlowStats__get_bytesDropped(PyNs3FlowMonitorFlowStats *self, void * PYBINDGEN_UNUSED(closure))
 {
     PyObject *py_retval;
-    Pystd__vector__lt___unsigned_long_long___gt__ *py_std__vector__lt___unsigned_long_long___gt__;
+    Pystd__vector__lt___unsigned_long___gt__ *py_std__vector__lt___unsigned_long___gt__;
     
-    py_std__vector__lt___unsigned_long_long___gt__ = PyObject_New(Pystd__vector__lt___unsigned_long_long___gt__, &Pystd__vector__lt___unsigned_long_long___gt___Type);
-    py_std__vector__lt___unsigned_long_long___gt__->obj = new std::vector< unsigned long long >(self->obj->bytesDropped);
-    py_retval = Py_BuildValue((char *) "N", py_std__vector__lt___unsigned_long_long___gt__);
+    py_std__vector__lt___unsigned_long___gt__ = PyObject_New(Pystd__vector__lt___unsigned_long___gt__, &Pystd__vector__lt___unsigned_long___gt___Type);
+    py_std__vector__lt___unsigned_long___gt__->obj = new std::vector< unsigned long >(self->obj->bytesDropped);
+    py_retval = Py_BuildValue((char *) "N", py_std__vector__lt___unsigned_long___gt__);
     return py_retval;
 }
 static int _wrap_PyNs3FlowMonitorFlowStats__set_bytesDropped(PyNs3FlowMonitorFlowStats *self, PyObject *value, void * PYBINDGEN_UNUSED(closure))
@@ -2605,7 +2605,7 @@ static int _wrap_PyNs3FlowMonitorFlowStats__set_bytesDropped(PyNs3FlowMonitorFlo
     PyObject *py_retval;
     
     py_retval = Py_BuildValue((char *) "(O)", value);
-    if (!PyArg_ParseTuple(py_retval, (char *) "O&", _wrap_convert_py2c__std__vector__lt___unsigned_long_long___gt__, &self->obj->bytesDropped)) {
+    if (!PyArg_ParseTuple(py_retval, (char *) "O&", _wrap_convert_py2c__std__vector__lt___unsigned_long___gt__, &self->obj->bytesDropped)) {
         Py_DECREF(py_retval);
         return -1;
     }
@@ -3882,11 +3882,11 @@ static int _wrap_PyNs3FlowProbeFlowStats__set_bytes(PyNs3FlowProbeFlowStats *sel
 static PyObject* _wrap_PyNs3FlowProbeFlowStats__get_bytesDropped(PyNs3FlowProbeFlowStats *self, void * PYBINDGEN_UNUSED(closure))
 {
     PyObject *py_retval;
-    Pystd__vector__lt___unsigned_long_long___gt__ *py_std__vector__lt___unsigned_long_long___gt__;
+    Pystd__vector__lt___unsigned_long___gt__ *py_std__vector__lt___unsigned_long___gt__;
     
-    py_std__vector__lt___unsigned_long_long___gt__ = PyObject_New(Pystd__vector__lt___unsigned_long_long___gt__, &Pystd__vector__lt___unsigned_long_long___gt___Type);
-    py_std__vector__lt___unsigned_long_long___gt__->obj = new std::vector< unsigned long long >(self->obj->bytesDropped);
-    py_retval = Py_BuildValue((char *) "N", py_std__vector__lt___unsigned_long_long___gt__);
+    py_std__vector__lt___unsigned_long___gt__ = PyObject_New(Pystd__vector__lt___unsigned_long___gt__, &Pystd__vector__lt___unsigned_long___gt___Type);
+    py_std__vector__lt___unsigned_long___gt__->obj = new std::vector< unsigned long >(self->obj->bytesDropped);
+    py_retval = Py_BuildValue((char *) "N", py_std__vector__lt___unsigned_long___gt__);
     return py_retval;
 }
 static int _wrap_PyNs3FlowProbeFlowStats__set_bytesDropped(PyNs3FlowProbeFlowStats *self, PyObject *value, void * PYBINDGEN_UNUSED(closure))
@@ -3894,7 +3894,7 @@ static int _wrap_PyNs3FlowProbeFlowStats__set_bytesDropped(PyNs3FlowProbeFlowSta
     PyObject *py_retval;
     
     py_retval = Py_BuildValue((char *) "(O)", value);
-    if (!PyArg_ParseTuple(py_retval, (char *) "O&", _wrap_convert_py2c__std__vector__lt___unsigned_long_long___gt__, &self->obj->bytesDropped)) {
+    if (!PyArg_ParseTuple(py_retval, (char *) "O&", _wrap_convert_py2c__std__vector__lt___unsigned_long___gt__, &self->obj->bytesDropped)) {
         Py_DECREF(py_retval);
         return -1;
     }
@@ -6399,7 +6399,7 @@ PyTypeObject Pystd__vector__lt___unsigned_int___gt__Iter_Type = {
 
 
 static void
-Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_clear(Pystd__vector__lt___unsigned_long_long___gt__Iter *self)
+Pystd__vector__lt___unsigned_long___gt__Iter__tp_clear(Pystd__vector__lt___unsigned_long___gt__Iter *self)
 {
     Py_CLEAR(self->container);
     delete self->iterator;
@@ -6409,7 +6409,7 @@ Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_clear(Pystd__vector__lt___
 
 
 static int
-Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_traverse(Pystd__vector__lt___unsigned_long_long___gt__Iter *self, visitproc visit, void *arg)
+Pystd__vector__lt___unsigned_long___gt__Iter__tp_traverse(Pystd__vector__lt___unsigned_long___gt__Iter *self, visitproc visit, void *arg)
 {
     Py_VISIT((PyObject *) self->container);
     return 0;
@@ -6417,7 +6417,7 @@ Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_traverse(Pystd__vector__lt
 
 
 static void
-_wrap_Pystd__vector__lt___unsigned_long_long___gt____tp_dealloc(Pystd__vector__lt___unsigned_long_long___gt__ *self)
+_wrap_Pystd__vector__lt___unsigned_long___gt____tp_dealloc(Pystd__vector__lt___unsigned_long___gt__ *self)
 {
     delete self->obj;
     self->obj = NULL;
@@ -6427,7 +6427,7 @@ _wrap_Pystd__vector__lt___unsigned_long_long___gt____tp_dealloc(Pystd__vector__l
 
 
 static void
-_wrap_Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_dealloc(Pystd__vector__lt___unsigned_long_long___gt__Iter *self)
+_wrap_Pystd__vector__lt___unsigned_long___gt__Iter__tp_dealloc(Pystd__vector__lt___unsigned_long___gt__Iter *self)
 {
     Py_CLEAR(self->container);
     delete self->iterator;
@@ -6438,27 +6438,27 @@ _wrap_Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_dealloc(Pystd__vecto
 
 
 static PyObject*
-_wrap_Pystd__vector__lt___unsigned_long_long___gt____tp_iter(Pystd__vector__lt___unsigned_long_long___gt__ *self)
+_wrap_Pystd__vector__lt___unsigned_long___gt____tp_iter(Pystd__vector__lt___unsigned_long___gt__ *self)
 {
-    Pystd__vector__lt___unsigned_long_long___gt__Iter *iter = PyObject_GC_New(Pystd__vector__lt___unsigned_long_long___gt__Iter, &Pystd__vector__lt___unsigned_long_long___gt__Iter_Type);
+    Pystd__vector__lt___unsigned_long___gt__Iter *iter = PyObject_GC_New(Pystd__vector__lt___unsigned_long___gt__Iter, &Pystd__vector__lt___unsigned_long___gt__Iter_Type);
     Py_INCREF(self);
     iter->container = self;
-    iter->iterator = new std::vector< unsigned long long >::iterator(self->obj->begin());
+    iter->iterator = new std::vector< unsigned long >::iterator(self->obj->begin());
     return (PyObject*) iter;
 }
 
 
 static PyObject*
-_wrap_Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_iter(Pystd__vector__lt___unsigned_long_long___gt__Iter *self)
+_wrap_Pystd__vector__lt___unsigned_long___gt__Iter__tp_iter(Pystd__vector__lt___unsigned_long___gt__Iter *self)
 {
     Py_INCREF(self);
     return (PyObject*) self;
 }
 
-static PyObject* _wrap_Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_iternext(Pystd__vector__lt___unsigned_long_long___gt__Iter *self)
+static PyObject* _wrap_Pystd__vector__lt___unsigned_long___gt__Iter__tp_iternext(Pystd__vector__lt___unsigned_long___gt__Iter *self)
 {
     PyObject *py_retval;
-    std::vector< unsigned long long >::iterator iter;
+    std::vector< unsigned long >::iterator iter;
     
     iter = *self->iterator;
     if (iter == self->container->obj->end()) {
@@ -6466,16 +6466,16 @@ static PyObject* _wrap_Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_ite
         return NULL;
     }
     ++(*self->iterator);
-    py_retval = Py_BuildValue((char *) "K", (*iter));
+    py_retval = Py_BuildValue((char *) "k", (*iter));
     return py_retval;
 }
 
-int _wrap_convert_py2c__long_long_unsigned_int(PyObject *value, long long unsigned int *address)
+int _wrap_convert_py2c__long_unsigned_int(PyObject *value, long unsigned int *address)
 {
     PyObject *py_retval;
     
     py_retval = Py_BuildValue((char *) "(O)", value);
-    if (!PyArg_ParseTuple(py_retval, (char *) "K", &*address)) {
+    if (!PyArg_ParseTuple(py_retval, (char *) "k", &*address)) {
         Py_DECREF(py_retval);
         return 0;
     }
@@ -6484,22 +6484,22 @@ int _wrap_convert_py2c__long_long_unsigned_int(PyObject *value, long long unsign
 }
 
 
-int _wrap_convert_py2c__std__vector__lt___unsigned_long_long___gt__(PyObject *arg, std::vector< unsigned long long > *container)
+int _wrap_convert_py2c__std__vector__lt___unsigned_long___gt__(PyObject *arg, std::vector< unsigned long > *container)
 {
-    if (PyObject_IsInstance(arg, (PyObject*) &Pystd__vector__lt___unsigned_long_long___gt___Type)) {
-        *container = *((Pystd__vector__lt___unsigned_long_long___gt__*)arg)->obj;
+    if (PyObject_IsInstance(arg, (PyObject*) &Pystd__vector__lt___unsigned_long___gt___Type)) {
+        *container = *((Pystd__vector__lt___unsigned_long___gt__*)arg)->obj;
     } else if (PyList_Check(arg)) {
         container->clear();
         Py_ssize_t size = PyList_Size(arg);
         for (Py_ssize_t i = 0; i < size; i++) {
-            long long unsigned int item;
-            if (!_wrap_convert_py2c__long_long_unsigned_int(PyList_GET_ITEM(arg, i), &item)) {
+            long unsigned int item;
+            if (!_wrap_convert_py2c__long_unsigned_int(PyList_GET_ITEM(arg, i), &item)) {
                 return 0;
             }
             container->push_back(item);
         }
     } else {
-        PyErr_SetString(PyExc_TypeError, "parameter must be None, a Std__vector__lt___unsigned_long_long___gt__ instance, or a list of long long unsigned int");
+        PyErr_SetString(PyExc_TypeError, "parameter must be None, a Std__vector__lt___unsigned_long___gt__ instance, or a list of long unsigned int");
         return 0;
     }
     return 1;
@@ -6507,7 +6507,7 @@ int _wrap_convert_py2c__std__vector__lt___unsigned_long_long___gt__(PyObject *ar
 
 
 static int
-_wrap_Pystd__vector__lt___unsigned_long_long___gt____tp_init(Pystd__vector__lt___unsigned_long_long___gt__ *self, PyObject *args, PyObject *kwargs)
+_wrap_Pystd__vector__lt___unsigned_long___gt____tp_init(Pystd__vector__lt___unsigned_long___gt__ *self, PyObject *args, PyObject *kwargs)
 {
     const char *keywords[] = {"arg", NULL};
     PyObject *arg = NULL;
@@ -6516,12 +6516,12 @@ _wrap_Pystd__vector__lt___unsigned_long_long___gt____tp_init(Pystd__vector__lt__
         return -1;
     }
 
-    self->obj = new std::vector< unsigned long long >;
+    self->obj = new std::vector< unsigned long >;
 
     if (arg == NULL)
         return 0;
 
-    if (!_wrap_convert_py2c__std__vector__lt___unsigned_long_long___gt__(arg, self->obj)) {
+    if (!_wrap_convert_py2c__std__vector__lt___unsigned_long___gt__(arg, self->obj)) {
         delete self->obj;
         self->obj = NULL;
         return -1;
@@ -6529,13 +6529,13 @@ _wrap_Pystd__vector__lt___unsigned_long_long___gt____tp_init(Pystd__vector__lt__
     return 0;
 }
 
-PyTypeObject Pystd__vector__lt___unsigned_long_long___gt___Type = {
+PyTypeObject Pystd__vector__lt___unsigned_long___gt___Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    (char *) "flow_monitor.Std__vector__lt___unsigned_long_long___gt__",            /* tp_name */
-    sizeof(Pystd__vector__lt___unsigned_long_long___gt__),                  /* tp_basicsize */
+    (char *) "flow_monitor.Std__vector__lt___unsigned_long___gt__",            /* tp_name */
+    sizeof(Pystd__vector__lt___unsigned_long___gt__),                  /* tp_basicsize */
     0,                                 /* tp_itemsize */
     /* methods */
-    (destructor)_wrap_Pystd__vector__lt___unsigned_long_long___gt____tp_dealloc,        /* tp_dealloc */
+    (destructor)_wrap_Pystd__vector__lt___unsigned_long___gt____tp_dealloc,        /* tp_dealloc */
     (printfunc)0,                      /* tp_print */
     (getattrfunc)NULL,       /* tp_getattr */
     (setattrfunc)NULL,       /* tp_setattr */
@@ -6556,7 +6556,7 @@ PyTypeObject Pystd__vector__lt___unsigned_long_long___gt___Type = {
     (inquiry)NULL,             /* tp_clear */
     (richcmpfunc)NULL,   /* tp_richcompare */
     0,             /* tp_weaklistoffset */
-    (getiterfunc)_wrap_Pystd__vector__lt___unsigned_long_long___gt____tp_iter,          /* tp_iter */
+    (getiterfunc)_wrap_Pystd__vector__lt___unsigned_long___gt____tp_iter,          /* tp_iter */
     (iternextfunc)NULL,     /* tp_iternext */
     (struct PyMethodDef*)NULL, /* tp_methods */
     (struct PyMemberDef*)0,              /* tp_members */
@@ -6566,7 +6566,7 @@ PyTypeObject Pystd__vector__lt___unsigned_long_long___gt___Type = {
     (descrgetfunc)NULL,    /* tp_descr_get */
     (descrsetfunc)NULL,    /* tp_descr_set */
     0,                 /* tp_dictoffset */
-    (initproc)_wrap_Pystd__vector__lt___unsigned_long_long___gt____tp_init,             /* tp_init */
+    (initproc)_wrap_Pystd__vector__lt___unsigned_long___gt____tp_init,             /* tp_init */
     (allocfunc)PyType_GenericAlloc,           /* tp_alloc */
     (newfunc)PyType_GenericNew,               /* tp_new */
     (freefunc)0,             /* tp_free */
@@ -6579,13 +6579,13 @@ PyTypeObject Pystd__vector__lt___unsigned_long_long___gt___Type = {
     (destructor) NULL                  /* tp_del */
 };
 
-PyTypeObject Pystd__vector__lt___unsigned_long_long___gt__Iter_Type = {
+PyTypeObject Pystd__vector__lt___unsigned_long___gt__Iter_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
-    (char *) "flow_monitor.Std__vector__lt___unsigned_long_long___gt__Iter",            /* tp_name */
-    sizeof(Pystd__vector__lt___unsigned_long_long___gt__Iter),                  /* tp_basicsize */
+    (char *) "flow_monitor.Std__vector__lt___unsigned_long___gt__Iter",            /* tp_name */
+    sizeof(Pystd__vector__lt___unsigned_long___gt__Iter),                  /* tp_basicsize */
     0,                                 /* tp_itemsize */
     /* methods */
-    (destructor)_wrap_Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_dealloc,        /* tp_dealloc */
+    (destructor)_wrap_Pystd__vector__lt___unsigned_long___gt__Iter__tp_dealloc,        /* tp_dealloc */
     (printfunc)0,                      /* tp_print */
     (getattrfunc)NULL,       /* tp_getattr */
     (setattrfunc)NULL,       /* tp_setattr */
@@ -6602,12 +6602,12 @@ PyTypeObject Pystd__vector__lt___unsigned_long_long___gt__Iter_Type = {
     (PyBufferProcs*)NULL,  /* tp_as_buffer */
     Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_GC,                      /* tp_flags */
     NULL,                        /* Documentation string */
-    (traverseproc)Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_traverse,     /* tp_traverse */
-    (inquiry)Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_clear,             /* tp_clear */
+    (traverseproc)Pystd__vector__lt___unsigned_long___gt__Iter__tp_traverse,     /* tp_traverse */
+    (inquiry)Pystd__vector__lt___unsigned_long___gt__Iter__tp_clear,             /* tp_clear */
     (richcmpfunc)NULL,   /* tp_richcompare */
     0,             /* tp_weaklistoffset */
-    (getiterfunc)_wrap_Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_iter,          /* tp_iter */
-    (iternextfunc)_wrap_Pystd__vector__lt___unsigned_long_long___gt__Iter__tp_iternext,     /* tp_iternext */
+    (getiterfunc)_wrap_Pystd__vector__lt___unsigned_long___gt__Iter__tp_iter,          /* tp_iter */
+    (iternextfunc)_wrap_Pystd__vector__lt___unsigned_long___gt__Iter__tp_iternext,     /* tp_iternext */
     (struct PyMethodDef*)NULL, /* tp_methods */
     (struct PyMemberDef*)0,              /* tp_members */
     NULL,                     /* tp_getset */
@@ -9327,15 +9327,15 @@ MOD_INIT(flow_monitor)
     }
     PyModule_AddObject(m, (char *) "Std__vector__lt___unsigned_int___gt__", (PyObject *) &Pystd__vector__lt___unsigned_int___gt___Type);
     PyModule_AddObject(m, (char *) "Std__vector__lt___unsigned_int___gt__Iter", (PyObject *) &Pystd__vector__lt___unsigned_int___gt__Iter_Type);
-    /* Register the 'std::vector< unsigned long long >' class */
-    if (PyType_Ready(&Pystd__vector__lt___unsigned_long_long___gt___Type)) {
+    /* Register the 'std::vector< unsigned long >' class */
+    if (PyType_Ready(&Pystd__vector__lt___unsigned_long___gt___Type)) {
         return MOD_ERROR;
     }
-    if (PyType_Ready(&Pystd__vector__lt___unsigned_long_long___gt__Iter_Type)) {
+    if (PyType_Ready(&Pystd__vector__lt___unsigned_long___gt__Iter_Type)) {
         return MOD_ERROR;
     }
-    PyModule_AddObject(m, (char *) "Std__vector__lt___unsigned_long_long___gt__", (PyObject *) &Pystd__vector__lt___unsigned_long_long___gt___Type);
-    PyModule_AddObject(m, (char *) "Std__vector__lt___unsigned_long_long___gt__Iter", (PyObject *) &Pystd__vector__lt___unsigned_long_long___gt__Iter_Type);
+    PyModule_AddObject(m, (char *) "Std__vector__lt___unsigned_long___gt__", (PyObject *) &Pystd__vector__lt___unsigned_long___gt___Type);
+    PyModule_AddObject(m, (char *) "Std__vector__lt___unsigned_long___gt__Iter", (PyObject *) &Pystd__vector__lt___unsigned_long___gt__Iter_Type);
     /* Register the 'std::map< unsigned int, ns3::FlowMonitor::FlowStats >' class */
     if (PyType_Ready(&Pystd__map__lt___unsigned_int__ns3__FlowMonitor__FlowStats___gt___Type)) {
         return MOD_ERROR;

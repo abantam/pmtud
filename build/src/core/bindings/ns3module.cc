@@ -4711,16 +4711,16 @@ PyObject * _wrap__core_TypeNameGet__lt__signed_char__gt__();
 
 
 PyObject *
-_wrap__core_TypeNameGet__lt__unsigned_int__gt__()
+_wrap__core_TypeNameGet__lt__unsigned_long__gt__()
 {
     PyObject *py_retval;
     std::string retval;
     
-    retval = ns3::TypeNameGet< unsigned int >();
+    retval = ns3::TypeNameGet< unsigned long >();
     py_retval = Py_BuildValue((char *) "s#", (retval).c_str(), (retval).size());
     return py_retval;
 }
-PyObject * _wrap__core_TypeNameGet__lt__unsigned_int__gt__();
+PyObject * _wrap__core_TypeNameGet__lt__unsigned_long__gt__();
 
 
 
@@ -5209,6 +5209,19 @@ _wrap__core_MakeVector2DChecker()
 PyObject * _wrap__core_MakeVector2DChecker();
 
 
+PyObject *
+_wrap__core_TypeNameGet__lt__unsigned_int__gt__()
+{
+    PyObject *py_retval;
+    std::string retval;
+    
+    retval = ns3::TypeNameGet< unsigned int >();
+    py_retval = Py_BuildValue((char *) "s#", (retval).c_str(), (retval).size());
+    return py_retval;
+}
+PyObject * _wrap__core_TypeNameGet__lt__unsigned_int__gt__();
+
+
 
 PyObject *
 _wrap__core_Years__0(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs, PyObject **return_exception)
@@ -5518,19 +5531,6 @@ PyObject * _wrap__core_MicroSeconds(PyObject *self, PyObject *args, PyObject *kw
 }
 PyObject * _wrap__core_MicroSeconds(PyObject *self, PyObject *args, PyObject *kwargs);
 
-
-PyObject *
-_wrap__core_TypeNameGet__lt__unsigned_long_long__gt__()
-{
-    PyObject *py_retval;
-    std::string retval;
-    
-    retval = ns3::TypeNameGet< unsigned long long >();
-    py_retval = Py_BuildValue((char *) "s#", (retval).c_str(), (retval).size());
-    return py_retval;
-}
-PyObject * _wrap__core_TypeNameGet__lt__unsigned_long_long__gt__();
-
 static PyMethodDef _core_functions[] = {
     {(char *) "MakeVectorChecker", (PyCFunction) _wrap__core_MakeVectorChecker, METH_NOARGS, NULL },
     {(char *) "MakeTypeIdChecker", (PyCFunction) _wrap__core_MakeTypeIdChecker, METH_NOARGS, NULL },
@@ -5566,7 +5566,7 @@ static PyMethodDef _core_functions[] = {
     {(char *) "NanoSeconds", (PyCFunction) _wrap__core_NanoSeconds, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "Days", (PyCFunction) _wrap__core_Days, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "TypeNameGet__lt__signed_char__gt__", (PyCFunction) _wrap__core_TypeNameGet__lt__signed_char__gt__, METH_NOARGS, NULL },
-    {(char *) "TypeNameGet__lt__unsigned_int__gt__", (PyCFunction) _wrap__core_TypeNameGet__lt__unsigned_int__gt__, METH_NOARGS, NULL },
+    {(char *) "TypeNameGet__lt__unsigned_long__gt__", (PyCFunction) _wrap__core_TypeNameGet__lt__unsigned_long__gt__, METH_NOARGS, NULL },
     {(char *) "MakeTimeChecker", (PyCFunction) _wrap__core_MakeTimeChecker, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "LogComponentDisableAll", (PyCFunction) _wrap__core_LogComponentDisableAll, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "Minutes", (PyCFunction) _wrap__core_Minutes, METH_KEYWORDS|METH_VARARGS, NULL },
@@ -5575,11 +5575,11 @@ static PyMethodDef _core_functions[] = {
     {(char *) "PicoSeconds", (PyCFunction) _wrap__core_PicoSeconds, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "TypeNameGet__lt__double__gt__", (PyCFunction) _wrap__core_TypeNameGet__lt__double__gt__, METH_NOARGS, NULL },
     {(char *) "MakeVector2DChecker", (PyCFunction) _wrap__core_MakeVector2DChecker, METH_NOARGS, NULL },
+    {(char *) "TypeNameGet__lt__unsigned_int__gt__", (PyCFunction) _wrap__core_TypeNameGet__lt__unsigned_int__gt__, METH_NOARGS, NULL },
     {(char *) "Years", (PyCFunction) _wrap__core_Years, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "TypeNameGet__lt__unsigned_short__gt__", (PyCFunction) _wrap__core_TypeNameGet__lt__unsigned_short__gt__, METH_NOARGS, NULL },
     {(char *) "MakeEnumChecker", (PyCFunction) _wrap__core_MakeEnumChecker, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "MicroSeconds", (PyCFunction) _wrap__core_MicroSeconds, METH_KEYWORDS|METH_VARARGS, NULL },
-    {(char *) "TypeNameGet__lt__unsigned_long_long__gt__", (PyCFunction) _wrap__core_TypeNameGet__lt__unsigned_long_long__gt__, METH_NOARGS, NULL },
     {NULL, NULL, 0, NULL}
 };
 /* --- classes --- */

@@ -10,6 +10,10 @@ using namespace ns3;
 #define DELAY = 20ms;//遅延時間
 
 int main() {
+
+	//シミュレーションの既定値を設定
+    Config::SetDefault ("ns3::OnOffApplication::PacketSize", UintegerValue (250));//パケットサイズを２５０バイトに設定
+    Config::SetDefault ("ns3::OnOffApplication::DataRate", StringValue ("5kb/s"));//転送速度を５kb/sに設定
 	
 	//コンテナ１にノードを２つ生成
 	NodeContainer network1_nodes;
@@ -28,7 +32,8 @@ int main() {
 	//各コンテナの管理を行うための設定
 	NetDeviceContainer dev0 = p2p.Install(network1_nodes);
 	NetDeviceContainer dev1 = p2p.Install(network2_nodes);
-
+	
+	
 	Simulator::Run();
 	Simulator::Destroy();
 

@@ -2011,21 +2011,21 @@ int _wrap_convert_py2c__std__vector__lt___unsigned_int___gt__(PyObject *arg, std
 
 typedef struct {
     PyObject_HEAD
-    std::vector< unsigned long long > *obj;
-} Pystd__vector__lt___unsigned_long_long___gt__;
+    std::vector< unsigned long > *obj;
+} Pystd__vector__lt___unsigned_long___gt__;
 
 
 typedef struct {
     PyObject_HEAD
-    Pystd__vector__lt___unsigned_long_long___gt__ *container;
-    std::vector< unsigned long long >::iterator *iterator;
-} Pystd__vector__lt___unsigned_long_long___gt__Iter;
+    Pystd__vector__lt___unsigned_long___gt__ *container;
+    std::vector< unsigned long >::iterator *iterator;
+} Pystd__vector__lt___unsigned_long___gt__Iter;
 
 
-extern PyTypeObject Pystd__vector__lt___unsigned_long_long___gt___Type;
-extern PyTypeObject Pystd__vector__lt___unsigned_long_long___gt__Iter_Type;
+extern PyTypeObject Pystd__vector__lt___unsigned_long___gt___Type;
+extern PyTypeObject Pystd__vector__lt___unsigned_long___gt__Iter_Type;
 
-int _wrap_convert_py2c__std__vector__lt___unsigned_long_long___gt__(PyObject *arg, std::vector< unsigned long long > *container);
+int _wrap_convert_py2c__std__vector__lt___unsigned_long___gt__(PyObject *arg, std::vector< unsigned long > *container);
 
 typedef struct {
     PyObject_HEAD
@@ -2621,7 +2621,7 @@ public:
 int _wrap_convert_py2c__unsigned_int(PyObject *value, unsigned int *address);
 
 
-int _wrap_convert_py2c__long_long_unsigned_int(PyObject *value, long long unsigned int *address);
+int _wrap_convert_py2c__long_unsigned_int(PyObject *value, long unsigned int *address);
 
 
 int _wrap_convert_py2c__ns3__FlowMonitor__FlowStats(PyObject *value, ns3::FlowMonitor::FlowStats *address);

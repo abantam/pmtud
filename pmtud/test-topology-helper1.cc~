@@ -26,9 +26,12 @@ int main(int argc, char *argv[]) {
 	net.InstallStack(stack);
 	
 	//各ネットワークにＩＰアドレスを割り当てる
-	net.AssignIpv4Addresses(Ipv4AddressHelper("192.168.1.0", "255.255.255.0"), 
-	                        Ipv4AddressHelper("192.168.2.0", "255.255.255.0"), 
-	                        Ipv4AddressHelper("192.168.3.0", "255.255.255.0"));
+	dumbbell_net.AssignIpv4Addresses (
+		Ipv4AddressHelper ("10.1.1.0", "255.255.255.0"),
+		Ipv4AddressHelper ("10.2.1.0", "255.255.255.0"),
+		Ipv4AddressHelper ("10.3.1.0", "255.255.255.0"));
+
+    net.BoundingBox (1, 1, 100, 100);
 	
 	Simulator::Run();
 	Simulator::Destroy();

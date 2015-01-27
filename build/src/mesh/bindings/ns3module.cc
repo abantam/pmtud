@@ -12656,7 +12656,6 @@ initmesh_dot11s(void)
     }
     PyModule_AddObject(m, (char *) "Std__vector__lt___ns3__Mac48Address___gt__", (PyObject *) &Pystd__vector__lt___ns3__Mac48Address___gt___Type);
     PyModule_AddObject(m, (char *) "Std__vector__lt___ns3__Mac48Address___gt__Iter", (PyObject *) &Pystd__vector__lt___ns3__Mac48Address___gt__Iter_Type);
-    PyModule_AddIntConstant(m, (char *) "PROTOCOL_HWMP", ns3::dot11s::PROTOCOL_HWMP);
     PyModule_AddIntConstant(m, (char *) "SYNC_NEIGHBOUR_OFFSET", ns3::dot11s::SYNC_NEIGHBOUR_OFFSET);
     PyModule_AddIntConstant(m, (char *) "SYNC_NULL", ns3::dot11s::SYNC_NULL);
     PyModule_AddIntConstant(m, (char *) "CONGESTION_SIGNALING", ns3::dot11s::CONGESTION_SIGNALING);
@@ -12674,6 +12673,7 @@ initmesh_dot11s(void)
     PyModule_AddIntConstant(m, (char *) "REASON11S_MESH_INCONSISTENT_PARAMETERS", ns3::dot11s::REASON11S_MESH_INCONSISTENT_PARAMETERS);
     PyModule_AddIntConstant(m, (char *) "REASON11S_MESH_INVALID_SECURITY_CAPABILITY", ns3::dot11s::REASON11S_MESH_INVALID_SECURITY_CAPABILITY);
     PyModule_AddIntConstant(m, (char *) "REASON11S_RESERVED", ns3::dot11s::REASON11S_RESERVED);
+    PyModule_AddIntConstant(m, (char *) "PROTOCOL_HWMP", ns3::dot11s::PROTOCOL_HWMP);
     {
         PyObject *tmp_value;
          // ns3::dot11s::IePeerManagement::PEER_OPEN

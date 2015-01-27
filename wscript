@@ -670,6 +670,14 @@ def add_pmtud_programs(bld):
             obj.target = name
             obj.name = obj.target
             obj.install_path = None
+            
+def build(bld):
+    obj = bld.create_ns3_program('tcp-star-server', 
+	['visualizer', 'point-to-point', 'applications', 'internet'])
+    obj.source = 'tcp-star-server.cc'
+    obj = bld.create_ns3_program('wireless-animation',
+	['netanim', 'point-to-point', 'applications', 'network', 'wifi', 'mobility'])
+    obj.source = 'wireless-animation.cc'
 # End of Appended script
 
 def _get_all_task_gen(self):

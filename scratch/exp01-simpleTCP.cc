@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
     PointToPointHelper p2p1;
     p2p1.SetDeviceAttribute("DataRate", StringValue("5Mbps"));
     p2p1.SetDeviceAttribute("Delay", StringValue("2ms"));
-    p2p1.setQueue("ns3::DropTailQueue");
+    p2p1.SetQueue("ns3::DropTailQueue");
     
     NetDeviceContainer devices1;
     devices1 = p2p1.Install(net1_nodes);
@@ -65,9 +65,9 @@ int main(int argc, char *argv[]) {
     devices2 = p2p1.Install(net2_nodes);
     
     PointToPointHelper p2p2;
-    p2p2.setDeviceAttribute("DataRate", StringValue("800Kbps"));
-    p2p2.setDeviceAttribute("Delay", StringValue("5ms"));
-    p2p2.setQueue("ns3::DropTailQueue");
+    p2p2.SetDeviceAttribute("DataRate", StringValue("800Kbps"));
+    p2p2.SetDeviceAttribute("Delay", StringValue("5ms"));
+    p2p2.SetQueue("ns3::DropTailQueue");
     
     NetDeviceContainer devices3;
     devices3 = p2p2.Install(net3_nodes);
@@ -90,13 +90,13 @@ int main(int argc, char *argv[]) {
     NS_LOG_INFO("Network 3: " << ifs3.GetAddress(0, 0) << " - " << ifs3.GetAddress(1, 0));
     
     NS_LOG_INFO("Initialize Global Routing.");
-    Ipv4GlobalRoutingHelper::PopularRoutingTablets();
+    Ipv4GlobalRoutingHelper::PopulateRoutingTables();
     
     //BulkSendHelperでシミュレートされるＦＴＰソケットを生成
-    AddresValue remoteAddress(InetSocketAddress(ifa3.GetAddress(1, 0), PORT));
+    AddressValue remoteAddress(InetSocketAddress(ifs3.GetAddress(1, 0), PORT));
     BulkSendHelper ftp("ns3::TcpSocketFactory", Address());
     ftp.SetAttribute("Remote", remoteAddress);//接続先のピアアドレスを指定
-    ftp.SetAttribute("MaxBytes", UIntegerValue(int(DATA_MBYTES) * 1024 * 1024));//転送される最大データ量を指定
+    ftp.SetAttribute("MaxBytes", UintegerValue(int(DATA_MBYTES) * 1024 * 1024));//転送される最大データ量を指定
     
     //ソースノードにＦＴＰアプリケーションを装着し、アプリケーションの開始・終了時刻を指定
     ApplicationContainer sourceApp1 = ftp.Install(net1_nodes.Get(0));

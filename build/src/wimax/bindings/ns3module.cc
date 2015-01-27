@@ -27814,6 +27814,31 @@ _wrap_PyNs3WimaxPhy_IsDuplex(PyNs3WimaxPhy *self)
 
 
 PyObject *
+_wrap_PyNs3WimaxPhy_StartScanning(PyNs3WimaxPhy *self, PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    uint64_t frequency;
+    PyNs3Time *timeout;
+    PyObject *callback;
+    ns3::Ptr<PythonCallbackImpl5> callback_cb_impl;
+    const char *keywords[] = {"frequency", "timeout", "callback", NULL};
+    
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "KO!O", (char **) keywords, &frequency, &PyNs3Time_Type, &timeout, &callback)) {
+        return NULL;
+    }
+    if (!PyCallable_Check(callback)) {
+        PyErr_SetString(PyExc_TypeError, "parameter 'callback' must be callbale");
+        return NULL;
+    }
+    callback_cb_impl = ns3::Create<PythonCallbackImpl5> (callback);
+    self->obj->StartScanning(frequency, *((PyNs3Time *) timeout)->obj, ns3::Callback<void, bool, unsigned long, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty> (callback_cb_impl));
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+
+
+PyObject *
 _wrap_PyNs3WimaxPhy_GetFrameDurationSec(PyNs3WimaxPhy *self)
 {
     PyObject *py_retval;
@@ -28067,6 +28092,7 @@ static PyMethodDef PyNs3WimaxPhy_methods[] = {
     {(char *) "SetSimplex", (PyCFunction) _wrap_PyNs3WimaxPhy_SetSimplex, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "GetDevice", (PyCFunction) _wrap_PyNs3WimaxPhy_GetDevice, METH_NOARGS, NULL },
     {(char *) "IsDuplex", (PyCFunction) _wrap_PyNs3WimaxPhy_IsDuplex, METH_NOARGS, NULL },
+    {(char *) "StartScanning", (PyCFunction) _wrap_PyNs3WimaxPhy_StartScanning, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "GetFrameDurationSec", (PyCFunction) _wrap_PyNs3WimaxPhy_GetFrameDurationSec, METH_NOARGS, NULL },
     {(char *) "GetState", (PyCFunction) _wrap_PyNs3WimaxPhy_GetState, METH_NOARGS, NULL },
     {(char *) "SetReceiveCallback", (PyCFunction) _wrap_PyNs3WimaxPhy_SetReceiveCallback, METH_KEYWORDS|METH_VARARGS, NULL },
@@ -31044,21 +31070,6 @@ _wrap_PyNs3Dcd_SetNrDlBurstProfiles(PyNs3Dcd *self, PyObject *args, PyObject *kw
 
 
 PyObject *
-_wrap_PyNs3Dcd_GetDlBurstProfiles(PyNs3Dcd *self)
-{
-    PyObject *py_retval;
-    std::vector< ns3::OfdmDlBurstProfile > retval;
-    Pystd__vector__lt___ns3__OfdmDlBurstProfile___gt__ *py_std__vector__lt___ns3__OfdmDlBurstProfile___gt__;
-    
-    retval = self->obj->GetDlBurstProfiles();
-    py_std__vector__lt___ns3__OfdmDlBurstProfile___gt__ = PyObject_New(Pystd__vector__lt___ns3__OfdmDlBurstProfile___gt__, &Pystd__vector__lt___ns3__OfdmDlBurstProfile___gt___Type);
-    py_std__vector__lt___ns3__OfdmDlBurstProfile___gt__->obj = new std::vector< ns3::OfdmDlBurstProfile >(retval);
-    py_retval = Py_BuildValue((char *) "N", py_std__vector__lt___ns3__OfdmDlBurstProfile___gt__);
-    return py_retval;
-}
-
-
-PyObject *
 _wrap_PyNs3Dcd_Deserialize(PyNs3Dcd *self, PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
@@ -31071,6 +31082,21 @@ _wrap_PyNs3Dcd_Deserialize(PyNs3Dcd *self, PyObject *args, PyObject *kwargs)
     }
     retval = self->obj->Deserialize(*((PyNs3BufferIterator *) start)->obj);
     py_retval = Py_BuildValue((char *) "N", PyLong_FromUnsignedLong(retval));
+    return py_retval;
+}
+
+
+PyObject *
+_wrap_PyNs3Dcd_GetDlBurstProfiles(PyNs3Dcd *self)
+{
+    PyObject *py_retval;
+    std::vector< ns3::OfdmDlBurstProfile > retval;
+    Pystd__vector__lt___ns3__OfdmDlBurstProfile___gt__ *py_std__vector__lt___ns3__OfdmDlBurstProfile___gt__;
+    
+    retval = self->obj->GetDlBurstProfiles();
+    py_std__vector__lt___ns3__OfdmDlBurstProfile___gt__ = PyObject_New(Pystd__vector__lt___ns3__OfdmDlBurstProfile___gt__, &Pystd__vector__lt___ns3__OfdmDlBurstProfile___gt___Type);
+    py_std__vector__lt___ns3__OfdmDlBurstProfile___gt__->obj = new std::vector< ns3::OfdmDlBurstProfile >(retval);
+    py_retval = Py_BuildValue((char *) "N", py_std__vector__lt___ns3__OfdmDlBurstProfile___gt__);
     return py_retval;
 }
 
@@ -31245,8 +31271,8 @@ _wrap_PyNs3Dcd__copy__(PyNs3Dcd *self)
 static PyMethodDef PyNs3Dcd_methods[] = {
     {(char *) "AddDlBurstProfile", (PyCFunction) _wrap_PyNs3Dcd_AddDlBurstProfile, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "SetNrDlBurstProfiles", (PyCFunction) _wrap_PyNs3Dcd_SetNrDlBurstProfiles, METH_KEYWORDS|METH_VARARGS, NULL },
-    {(char *) "GetDlBurstProfiles", (PyCFunction) _wrap_PyNs3Dcd_GetDlBurstProfiles, METH_NOARGS, NULL },
     {(char *) "Deserialize", (PyCFunction) _wrap_PyNs3Dcd_Deserialize, METH_KEYWORDS|METH_VARARGS, NULL },
+    {(char *) "GetDlBurstProfiles", (PyCFunction) _wrap_PyNs3Dcd_GetDlBurstProfiles, METH_NOARGS, NULL },
     {(char *) "GetConfigurationChangeCount", (PyCFunction) _wrap_PyNs3Dcd_GetConfigurationChangeCount, METH_NOARGS, NULL },
     {(char *) "GetName", (PyCFunction) _wrap_PyNs3Dcd_GetName, METH_NOARGS, NULL },
     {(char *) "Serialize", (PyCFunction) _wrap_PyNs3Dcd_Serialize, METH_KEYWORDS|METH_VARARGS, NULL },
